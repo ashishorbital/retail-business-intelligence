@@ -1,72 +1,80 @@
-# ShelfSense – AI Business Intelligence Platform
+# Dashboard – Retail Decision Intelligence Platform
 
-ShelfSense is a full-stack Business Intelligence platform that helps businesses analyze sales performance,
-customer behavior, and key business metrics through interactive dashboards and AI-powered insights.
+Dashboard is a full-stack, enterprise-grade Business Intelligence platform that helps businesses analyze sales performance, forecast revenue, and understand customer behavior through interactive visual analytics and natural language AI queries.
 
-## Features
+## 🚀 Key Features
 
-- Sales Analytics Dashboard
-- Customer Segmentation
-- Sales Forecasting
-- KPI Monitoring
-- Business Insights & Visualization
+- **Sharp Minimalist Design**: A premium, visually cohesive interface utilizing strict design tokens, micro-animations, and fluid optical adjustments.
+- **Natural Language AI (Ask AI)**: Integrated Retrieval-Augmented Generation (RAG) using **ChromaDB** and the **Groq API**. Query your datasets, forecasts, and segments using natural language.
+- **Automated ML Pipeline (Data Center)**: A seamless drag-and-drop file upload interface. Upload new transaction data (`.xlsx` or `.csv`) to automatically trigger a background orchestration pipeline that:
+  - Preprocesses data and engineers customer features
+  - Retrains ML revenue forecasting models
+  - Recalculates Customer Lifetime Value (CLV)
+  - Re-clusters user segments and basket recommendations
+  - Rebuilds the ChromaDB AI Vector Index from scratch
+- **Advanced Analytics**:
+  - Customer Segmentation & CLV Analysis
+  - Revenue Outlook & Volatility Metrics
+  - Basket Analysis
 
-## Tech Stack
+## 🛠 Tech Stack
 
 **Frontend**
-- React
-- Vite
+- React + Vite
+- Recharts (for monochrome data visualization)
+- Vanilla CSS (Strict Token-based Design System)
+- Lucide React Icons
 
-**Backend**
-- FastAPI
-- Python
+**Backend & ML Pipeline**
+- FastAPI + Python
+- ChromaDB + Groq API (RAG architecture)
+- Pandas, NumPy, Scikit-Learn
+- Background Threading for Pipeline Orchestration
 
-**Libraries**
-- Pandas
-- NumPy
-- Scikit-Learn
-- Mlxtend
-- OpenPyXL
+## 💻 Run Locally
 
-## Run Locally
-
-### Clone Repository
+### 1. Clone Repository
 
 ```bash
-git clone https://github.com/ashishorbital/ShelfSense-business-intelligence.git
-cd ShelfSense-business-intelligence
+git clone https://github.com/ashishorbital/retail-business-intelligence.git
+cd retail-business-intelligence
 ```
 
-### Backend
+### 2. Backend Setup
 
 ```bash
 cd backend
 pip install -r requirements.txt
 cp ../.env.example .env  # Or copy to backend/.env
-# Add your GROQ_API_KEY to the .env file
+```
+*Note: You must add your `GROQ_API_KEY` to the `.env` file for the Ask AI feature to work.*
+
+Run the server:
+```bash
 uvicorn main:app --reload
 ```
+Backend runs on: `http://localhost:8000`
 
-### Build RAG Index
-To enable the AI "Ask" feature, you must first build the vector index.
-Run this from the project root whenever data updates:
-```bash
-python -m modules.rag.embed --rebuild
-```
+### 3. Frontend Setup
 
-Backend: `http://localhost:8000`
-
-### Frontend
-
+Open a new terminal window:
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+Frontend runs on: `http://localhost:5173`
 
-Frontend: `http://localhost:5173`
+### 4. Seed the Data (Optional)
+If you want to manually seed the AI and ML models without using the UI, you can run the pipeline locally from the project root:
+```bash
+python -m backend.pipeline
+# Or specifically to just rebuild the AI index:
+python -m modules.rag.embed --rebuild
+```
+*Note: Using the "Data Center" tab in the web interface is the recommended way to upload new data and retrain models.*
 
-## Author
+## 👨‍💻 Author
 
 **Ashish PS**
 
