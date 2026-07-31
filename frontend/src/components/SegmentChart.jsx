@@ -37,8 +37,8 @@ export default function SegmentChart({
 
                 <Bar
                     dataKey="count"
-                    fill="#E06A27"
-                    radius={[8, 8, 0, 0]}
+                    fill="#111111"
+                    radius={0}
                 />
             </BarChart>
         </ResponsiveContainer>

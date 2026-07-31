@@ -6,11 +6,11 @@ export default function KPICard({
     return (
         <div className="kpi-card">
 
-            <div className="kpi-title">
+            <div className="type-1" style={{textTransform: 'uppercase', color: 'var(--color-low-confidence)'}}>
                 {title}
             </div>
 
-            <div className="kpi-value">
+            <div className="type-4">
                 {value}
             </div>
 

@@ -7,6 +7,8 @@ import CLV from "./pages/CLV";
 import Segments from "./pages/Segments";
 import Recommendations from "./pages/Recommendations";
 import Forecast from "./pages/Forecast";
+import Ask from "./pages/Ask";
+import DataUpload from "./pages/DataUpload";
 
 export default function App() {
   return (
@@ -41,6 +43,16 @@ export default function App() {
           <Route
             path="/forecast"
             element={<Forecast />}
+          />
+
+          <Route
+            path="/ask"
+            element={<Ask />}
+          />
+
+          <Route
+            path="/data-center"
+            element={<DataUpload />}
           />
 
         </Routes>

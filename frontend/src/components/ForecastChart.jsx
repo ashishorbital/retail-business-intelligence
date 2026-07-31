@@ -31,7 +31,7 @@ export default function ForecastChart({
                 <Line
                     type="monotone"
                     dataKey="predicted_revenue"
-                    stroke="#E06A27"
+                    stroke="#111111"
                     strokeWidth={3}
                     dot={false}
                 />

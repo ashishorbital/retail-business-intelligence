@@ -31,23 +31,23 @@ export default function Dashboard() {
     }, []);
 
     if (!kpis) {
-        return <h2>Loading...</h2>;
+        return <h2 className="loading-pulse" style={{color: 'var(--text-muted)'}}>Loading Dashboard...</h2>;
     }
 
     return (
         <section className="dashboard">
 
-            <div className="hero">
+            <div className="hero animate-fade-up">
 
-                <p className="eyebrow">
+                <p className="type-1" style={{textTransform: 'uppercase'}}>
                     Retail Decision Intelligence Platform
                 </p>
 
-                <h1>
-                    ShelfSense
+                <h1 className="type-3">
+                    Dashboard
                 </h1>
 
-                <p className="hero-copy">
+                <p className="type-2" style={{maxWidth: '600px'}}>
                     Across {kpis.customers.toLocaleString()}
                     {" "}customers,
                     {" "}
@@ -61,7 +61,7 @@ export default function Dashboard() {
 
             </div>
 
-            <div className="kpi-grid">
+            <div className="kpi-grid animate-fade-up delay-1">
 
                 <KPICard
                     title="Customers"
@@ -91,6 +91,7 @@ export default function Dashboard() {
             </div>
 
             <div
+                className="animate-fade-up delay-2"
                 style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",

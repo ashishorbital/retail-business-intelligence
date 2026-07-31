@@ -7,3 +7,7 @@ mlxtend
 openpyxl
 joblib
 python-multipart
+chromadb
+sentence-transformers
+groq
+python-dotenv

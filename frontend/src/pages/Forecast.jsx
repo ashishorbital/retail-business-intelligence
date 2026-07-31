@@ -136,7 +136,7 @@ export default function Forecast() {
                         <Line
                             type="monotone"
                             dataKey="predicted_revenue"
-                            stroke="#E06A27"
+                            stroke="#111111"
                             strokeWidth={4}
                             dot={false}
                         />

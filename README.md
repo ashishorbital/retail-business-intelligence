@@ -42,7 +42,16 @@ cd ShelfSense-business-intelligence
 ```bash
 cd backend
 pip install -r requirements.txt
+cp ../.env.example .env  # Or copy to backend/.env
+# Add your GROQ_API_KEY to the .env file
 uvicorn main:app --reload
+```
+
+### Build RAG Index
+To enable the AI "Ask" feature, you must first build the vector index.
+Run this from the project root whenever data updates:
+```bash
+python -m modules.rag.embed --rebuild
 ```
 
 Backend: `http://localhost:8000`

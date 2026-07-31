@@ -4,3 +4,7 @@ scikit-learn
 mlxtend
 openpyxl
 joblib
+chromadb
+sentence-transformers
+groq
+python-dotenv

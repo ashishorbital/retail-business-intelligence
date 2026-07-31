@@ -5,7 +5,9 @@ import {
     Users,
     BarChart3,
     ShoppingBasket,
-    TrendingUp
+    TrendingUp,
+    MessageSquare,
+    Database
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -35,6 +37,16 @@ export default function Sidebar() {
             label: "Revenue Outlook",
             path: "/forecast",
             icon: <TrendingUp size={18} />
+        },
+        {
+            label: "Ask AI",
+            path: "/ask",
+            icon: <MessageSquare size={18} />
+        },
+        {
+            label: "Data Center",
+            path: "/data-center",
+            icon: <Database size={18} />
         }
     ];
 
@@ -43,13 +55,11 @@ export default function Sidebar() {
 
             <div className="brand">
 
-                <div className="brand-mark">
-                    SS
-                </div>
+
 
                 <div>
-                    <h1>ShelfSense</h1>
-                    <span>
+                    <h1 className="type-4">Dashboard</h1>
+                    <span className="type-1" style={{textTransform: 'uppercase'}}>
                         Retail Decision Intelligence
                     </span>
                 </div>
@@ -82,17 +92,7 @@ export default function Sidebar() {
 
             </nav>
 
-            <div className="sidebar-footer">
 
-                <div className="footer-label">
-                    DATA STATUS
-                </div>
-
-                <div className="footer-value">
-                    Online Retail Dataset
-                </div>
-
-            </div>
 
         </aside>
     );
