@@ -20,7 +20,7 @@ const CustomTooltip = ({ active, payload, label }) => {
                 fontSize: "13px"
             }}>
                 <p style={{ color: "var(--text-muted)", marginBottom: "4px", fontSize: "11px" }}>{label}</p>
-                <p style={{ color: "#a5b4fc", fontWeight: 600 }}>
+                <p style={{ color: "var(--accent)", fontWeight: 700 }}>
                     £{Math.round(payload[0].value).toLocaleString()}
                 </p>
             </div>
@@ -35,8 +35,8 @@ export default function ForecastChart({ data }) {
             <AreaChart data={data} margin={{ top: 8, right: 4, left: 0, bottom: 0 }}>
                 <defs>
                     <linearGradient id="forecastGradDash" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%"  stopColor="#6366f1" stopOpacity={0.25} />
-                        <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
+                        <stop offset="5%"  stopColor="var(--accent)" stopOpacity={0.25} />
+                        <stop offset="95%" stopColor="var(--accent)" stopOpacity={0} />
                     </linearGradient>
                 </defs>
 
@@ -67,11 +67,11 @@ export default function ForecastChart({ data }) {
                 <Area
                     type="monotone"
                     dataKey="predicted_revenue"
-                    stroke="#6366f1"
+                    stroke="var(--accent)"
                     strokeWidth={2.5}
                     fill="url(#forecastGradDash)"
                     dot={false}
-                    activeDot={{ r: 5, fill: "#6366f1", stroke: "var(--bg-card)", strokeWidth: 2 }}
+                    activeDot={{ r: 5, fill: "var(--accent)", stroke: "var(--bg-card)", strokeWidth: 2 }}
                 />
             </AreaChart>
         </ResponsiveContainer>

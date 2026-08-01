@@ -71,11 +71,11 @@ export default function Ask() {
                             <div style={{
                                 width: 64, height: 64, borderRadius: "16px",
                                 background: "var(--accent-subtle)",
-                                border: "1px solid rgba(99,102,241,0.2)",
+                                border: "1px solid rgba(0,208,156,0.2)",
                                 display: "flex", alignItems: "center", justifyContent: "center",
                                 margin: "0 auto 16px"
                             }}>
-                                <Sparkles size={26} color="#a5b4fc" />
+                                <Sparkles size={26} color="var(--accent)" />
                             </div>
                             <p style={{ fontSize: "15px", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "6px" }}>
                                 Ask anything about your data
@@ -136,7 +136,7 @@ export default function Ask() {
                                 }}>
                                     {msg.role === "user"
                                         ? <User size={14} color="white" />
-                                        : <Bot size={14} color="#a5b4fc" />
+                                        : <Bot size={14} color="var(--accent)" />
                                     }
                                 </div>
 
@@ -185,7 +185,7 @@ export default function Ask() {
                                 border: "1px solid var(--border)",
                                 display: "flex", alignItems: "center", justifyContent: "center"
                             }}>
-                                <Bot size={14} color="#a5b4fc" />
+                                <Bot size={14} color="var(--accent)" />
                             </div>
                             <div className="chat-message ai" style={{ display: "flex", gap: "6px", alignItems: "center", padding: "16px 18px" }}>
                                 {[0, 1, 2].map((i) => (

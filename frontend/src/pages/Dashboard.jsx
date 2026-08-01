@@ -45,10 +45,7 @@ export default function Dashboard() {
                             fontWeight: 800,
                             letterSpacing: "-0.04em",
                             lineHeight: 1.1,
-                            background: "linear-gradient(135deg, var(--text-primary) 40%, rgba(165,180,252,0.8))",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
+                            color: "var(--text-primary)",
                             marginBottom: "10px"
                         }}>
                             Sales Dashboard
@@ -59,7 +56,7 @@ export default function Dashboard() {
                                 {kpis.customers.toLocaleString()}
                             </strong>{" "}
                             customers across all segments, with{" "}
-                            <strong style={{ color: "#a5b4fc" }}>
+                            <strong style={{ color: "var(--accent)" }}>
                                 {kpis.vip_customers.toLocaleString()} VIP accounts
                             </strong>{" "}
                             generating £{Math.round(kpis.forecast_revenue).toLocaleString()} forecast revenue.

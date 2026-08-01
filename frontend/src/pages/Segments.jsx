@@ -4,10 +4,10 @@ import api from "../api";
 import "../styles/dashboard.css";
 
 const ACCENT_COLORS = [
-    { color: "#6366f1", bg: "rgba(99,102,241,0.1)"  },
-    { color: "#10b981", bg: "rgba(16,185,129,0.1)"  },
-    { color: "#f59e0b", bg: "rgba(245,158,11,0.1)"  },
-    { color: "#06b6d4", bg: "rgba(6,182,212,0.1)"   },
+    { color: "#00d09c", bg: "rgba(0,208,156,0.1)"  },
+    { color: "#121212", bg: "#f1f5f9"  },
+    { color: "#f5a623", bg: "rgba(245,166,35,0.1)"  },
+    { color: "#3b82f6", bg: "rgba(59,130,246,0.1)"   },
 ];
 
 export default function Segments() {

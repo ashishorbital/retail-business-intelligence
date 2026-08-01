@@ -9,7 +9,7 @@ import {
     CartesianGrid
 } from "recharts";
 
-const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#06b6d4"];
+const COLORS = ["#00d09c", "#121212", "#f5a623", "#3b82f6"];
 
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {

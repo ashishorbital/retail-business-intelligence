@@ -48,12 +48,12 @@ export default function CLV() {
     };
 
     const metrics = customer?.found ? [
-        { label: "Predicted CLV",           value: `£${customer.predicted_clv.toLocaleString()}`,      icon: <Crown size={16} />,       accent: "rgba(99,102,241,0.1)",  color: "#818cf8" },
-        { label: "Total Revenue",            value: `£${customer.total_revenue.toLocaleString()}`,      icon: <DollarSign size={16} />,  accent: "rgba(16,185,129,0.1)", color: "#10b981" },
-        { label: "Orders",                   value: customer.purchase_frequency,                        icon: <ShoppingCart size={16} />,accent: "rgba(245,158,11,0.1)", color: "#f59e0b" },
-        { label: "Avg Order Value",          value: `£${customer.avg_order_value.toLocaleString()}`,    icon: <DollarSign size={16} />,  accent: "rgba(6,182,212,0.1)",  color: "#06b6d4" },
-        { label: "Unique Products",          value: customer.unique_products,                           icon: <Package size={16} />,     accent: "rgba(99,102,241,0.1)", color: "#818cf8" },
-        { label: "Days Since Last Purchase", value: `${customer.days_since_last_purchase}d`,           icon: <Clock size={16} />,       accent: "rgba(239,68,68,0.1)",  color: "#f87171" },
+        { label: "Predicted CLV",           value: `£${customer.predicted_clv.toLocaleString()}`,      icon: <Crown size={16} />,       accent: "rgba(0,208,156,0.1)",  color: "#00d09c" },
+        { label: "Total Revenue",            value: `£${customer.total_revenue.toLocaleString()}`,      icon: <DollarSign size={16} />,  accent: "#f1f5f9", color: "#121212" },
+        { label: "Orders",                   value: customer.purchase_frequency,                        icon: <ShoppingCart size={16} />,accent: "rgba(245,166,35,0.1)", color: "#f5a623" },
+        { label: "Avg Order Value",          value: `£${customer.avg_order_value.toLocaleString()}`,    icon: <DollarSign size={16} />,  accent: "rgba(59,130,246,0.1)",  color: "#3b82f6" },
+        { label: "Unique Products",          value: customer.unique_products,                           icon: <Package size={16} />,     accent: "rgba(0,208,156,0.1)", color: "#00d09c" },
+        { label: "Days Since Last Purchase", value: `${customer.days_since_last_purchase}d`,           icon: <Clock size={16} />,       accent: "rgba(235,91,60,0.1)",  color: "#eb5b3c" },
     ] : [];
 
     return (
@@ -109,10 +109,10 @@ export default function CLV() {
                             <div style={{
                                 width: 48, height: 48, borderRadius: "12px",
                                 background: "var(--accent-subtle)",
-                                border: "1px solid rgba(99,102,241,0.2)",
+                                border: "1px solid rgba(0,208,156,0.2)",
                                 display: "flex", alignItems: "center", justifyContent: "center"
                             }}>
-                                <User size={20} color="#a5b4fc" />
+                                <User size={20} color="var(--accent)" />
                             </div>
                             <div>
                                 <span className="profile-label">Customer ID</span>

@@ -26,7 +26,7 @@ const CustomTooltip = ({ active, payload, label }) => {
                 fontSize: "13px"
             }}>
                 <p style={{ color: "var(--text-muted)", marginBottom: "4px", fontSize: "11px" }}>{label}</p>
-                <p style={{ color: "#a5b4fc", fontWeight: 600 }}>
+                <p style={{ color: "var(--accent)", fontWeight: 700 }}>
                     £{Math.round(payload[0].value).toLocaleString()}
                 </p>
             </div>
@@ -75,22 +75,22 @@ export default function Forecast() {
             {/* KPI Row */}
             <div className="forecast-summary-grid animate-fade-up delay-1">
 
-                <div className="forecast-card" style={{ borderTop: "2px solid #6366f1" }}>
+                <div className="forecast-card" style={{ borderTop: "2px solid var(--accent)" }}>
                     <span>Total Forecast Revenue</span>
                     <h2>{formatCurrency(summary.forecast_revenue)}</h2>
                 </div>
 
-                <div className="forecast-card" style={{ borderTop: "2px solid #10b981" }}>
+                <div className="forecast-card" style={{ borderTop: "2px solid var(--text-primary)" }}>
                     <span>Average Daily Revenue</span>
                     <h2>{formatCurrency(summary.average_daily)}</h2>
                 </div>
 
-                <div className="forecast-card" style={{ borderTop: "2px solid #f59e0b" }}>
+                <div className="forecast-card" style={{ borderTop: "2px solid var(--warning)" }}>
                     <span>Best Day</span>
                     <h2>{formatCurrency(summary.best_day)}</h2>
                 </div>
 
-                <div className="forecast-card" style={{ borderTop: "2px solid #ef4444" }}>
+                <div className="forecast-card" style={{ borderTop: "2px solid var(--danger)" }}>
                     <span>Worst Day</span>
                     <h2>{formatCurrency(summary.worst_day)}</h2>
                 </div>
@@ -108,8 +108,8 @@ export default function Forecast() {
                     <AreaChart data={forecast} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
                         <defs>
                             <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%"  stopColor="#6366f1" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
+                                <stop offset="5%"  stopColor="var(--accent)" stopOpacity={0.3} />
+                                <stop offset="95%" stopColor="var(--accent)" stopOpacity={0} />
                             </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
@@ -131,11 +131,11 @@ export default function Forecast() {
                         <Area
                             type="monotone"
                             dataKey="predicted_revenue"
-                            stroke="#6366f1"
+                            stroke="var(--accent)"
                             strokeWidth={2.5}
                             fill="url(#revGrad)"
                             dot={false}
-                            activeDot={{ r: 5, fill: "#6366f1", stroke: "var(--bg-card)", strokeWidth: 2 }}
+                            activeDot={{ r: 5, fill: "var(--accent)", stroke: "var(--bg-card)", strokeWidth: 2 }}
                         />
                     </AreaChart>
                 </ResponsiveContainer>

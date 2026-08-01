@@ -171,7 +171,7 @@ export default function Recommendations() {
                             <div>
                                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
                                     <span style={{ fontSize: "11px", color: "var(--text-muted)" }}>Confidence level</span>
-                                    <span style={{ fontSize: "11px", color: "#a5b4fc", fontWeight: 600 }}>
+                                    <span style={{ fontSize: "11px", color: "var(--accent)", fontWeight: 600 }}>
                                         {(item.confidence * 100).toFixed(1)}%
                                     </span>
                                 </div>

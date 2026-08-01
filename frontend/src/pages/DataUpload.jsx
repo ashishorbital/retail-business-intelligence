@@ -92,12 +92,12 @@ export default function DataUpload() {
                         <div style={{
                             width: 72, height: 72, borderRadius: "18px",
                             background: "var(--accent-subtle)",
-                            border: "1px solid rgba(99,102,241,0.2)",
+                            border: "1px solid rgba(0,208,156,0.2)",
                             display: "flex", alignItems: "center", justifyContent: "center",
                             margin: "0 auto 20px",
                         }}>
                             <RefreshCw
-                                size={28} color="#a5b4fc"
+                                size={28} color="var(--accent)"
                                 style={{ animation: "spin 1.5s linear infinite" }}
                             />
                         </div>
@@ -111,7 +111,7 @@ export default function DataUpload() {
                         <div style={{ maxWidth: "400px", margin: "0 auto" }}>
                             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
                                 <span style={{ fontSize: "12px", color: "var(--text-muted)" }}>Progress</span>
-                                <span style={{ fontSize: "12px", fontWeight: 600, color: "#a5b4fc" }}>{status.progress}%</span>
+                                <span style={{ fontSize: "12px", fontWeight: 600, color: "var(--accent)" }}>{status.progress}%</span>
                             </div>
                             <div style={{ height: "6px", background: "var(--bg-surface)", borderRadius: "999px", overflow: "hidden" }}>
                                 <div style={{
@@ -242,9 +242,9 @@ export default function DataUpload() {
             {/* Info cards */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "14px", marginTop: "20px" }} className="animate-fade-up delay-2">
                 {[
-                    { title: "CLV Model",    desc: "Retrained with gradient boosting on new transaction data.",     color: "#6366f1" },
-                    { title: "AI Database",  desc: "Vector index rebuilt with latest customer & segment records.",   color: "#10b981" },
-                    { title: "Forecasting",  desc: "Prophet model updated with new time-series data.",              color: "#f59e0b" },
+                    { title: "CLV Model",    desc: "Retrained with gradient boosting on new transaction data.",     color: "#00d09c" },
+                    { title: "AI Database",  desc: "Vector index rebuilt with latest customer & segment records.",   color: "#121212" },
+                    { title: "Forecasting",  desc: "Prophet model updated with new time-series data.",              color: "#f5a623" },
                 ].map((info) => (
                     <div key={info.title} className="section-card" style={{ padding: "18px 20px" }}>
                         <div style={{ width: 6, height: 6, borderRadius: "50%", background: info.color, marginBottom: "10px" }} />
