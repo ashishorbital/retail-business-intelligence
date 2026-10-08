@@ -33,7 +33,10 @@ def load_transactions(path=RAW_FILE):
             f"\nDataset not found:\n{path}"
         )
 
-    df = pd.read_excel(path)
+    try:
+        df = pd.read_excel(path, engine="openpyxl")
+    except Exception:
+        df = pd.read_csv(path)
 
     df = df.dropna(
         subset=["CustomerID", "Description"]

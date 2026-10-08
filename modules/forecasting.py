@@ -29,7 +29,10 @@ TEST_DAYS = 30
 
 def load_daily_sales(path=RAW_FILE):
 
-    df = pd.read_excel(path)
+    try:
+        df = pd.read_excel(path, engine="openpyxl")
+    except Exception:
+        df = pd.read_csv(path)
 
     df = df.dropna(subset=["CustomerID"])
     df = df[df["Quantity"] > 0]

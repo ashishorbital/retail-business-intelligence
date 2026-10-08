@@ -38,8 +38,10 @@ def run_ml_pipeline():
             PIPELINE_STATUS["progress"] = int((idx / total_scripts) * 100)
             print(f"[{idx+1}/{total_scripts}] {script['name']}...")
             
-            # Using cwd as base_dir is important for modules.rag.embed
-            result = subprocess.run(script["cmd"], cwd=str(base_dir), capture_output=True, text=True)
+            import os
+            env = os.environ.copy()
+            env["PYTHONIOENCODING"] = "utf-8"
+            result = subprocess.run(script["cmd"], cwd=str(base_dir), capture_output=True, text=True, env=env, encoding="utf-8")
             
             if result.returncode != 0:
                 print(f"Error in {script['name']}: {result.stderr}")

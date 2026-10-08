@@ -22,9 +22,14 @@ def load_data(filepath):
 
     ext = Path(filepath).suffix.lower()
 
-    if ext in [".xlsx", ".xls"]:
-        df = pd.read_excel(filepath)
-    else:
+    try:
+        if ext == ".xlsx":
+            df = pd.read_excel(filepath, engine="openpyxl")
+        elif ext == ".xls":
+            df = pd.read_excel(filepath, engine="xlrd")
+        else:
+            df = pd.read_csv(filepath)
+    except Exception:
         df = pd.read_csv(filepath)
 
     print(f"      Loaded {len(df):,} rows × {len(df.columns)} columns")
